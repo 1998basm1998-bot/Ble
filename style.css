@@ -1,0 +1,208 @@
+/* إعدادات الخطوط والأساسيات */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    /* خلفية متدرجة تبرز التأثير الزجاجي */
+    background: linear-gradient(135deg, #1e130c, #9a8478);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* حاوية التطبيق (شكل هاتف المحمول) */
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 90vh;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    padding-bottom: 80px; /* مساحة لشريط التنقل */
+}
+
+/* التأثير الزجاجي البني */
+.glass {
+    background: rgba(101, 67, 33, 0.25); /* لون بني شفاف */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* التبويبات */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f0e6d2; /* لون بيج ذهبي خفيف */
+}
+
+/* تصميم الحقول والنماذج */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #dcdcdc;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+option {
+    background: #654321;
+    color: #fff;
+}
+
+/* حقل الإدخال مع زر بجانبه (لتحديد الموقع) */
+.input-with-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-btn:hover { background: rgba(255, 255, 255, 0.4); }
+
+/* الأزرار العامة */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background: #8b5a2b; /* لون بني مميز */
+    color: white;
+}
+
+.primary-btn:hover { background: #a06e3d; }
+
+.calc-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.danger-btn {
+    background: #a33b3b;
+    color: white;
+    margin-top: 30px;
+}
+
+.cost-display {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* شريط التنقل السفلي */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(50, 30, 15, 0.6);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 60px;
+}
+
+.nav-item i { font-size: 1.3em; }
+.nav-item span { font-size: 0.7em; }
+
+.nav-item.active {
+    color: #f4c27a; /* لون ذهبي للتبويب النشط */
+    transform: translateY(-3px);
+}
+
+/* بطاقات الرحلات في قسم "رحلاتي" */
+.ride-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.ride-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    background: #4caf50;
+    color: white;
+    margin-bottom: 10px;
+}
